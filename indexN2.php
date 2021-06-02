@@ -112,7 +112,7 @@
 			</div>
 
 				<div>
-					<input class="botao" type="submit" name="botao" value="Cadastrar" />
+					<button class="botao" type="submit" name="botao" value="Cadastrar">Cadastrar<b> ></button>
 				</div>
 			</form>
 	</body>
