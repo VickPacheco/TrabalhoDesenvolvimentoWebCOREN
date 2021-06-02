@@ -1,0 +1,69 @@
+h1 {
+	width: 100%;
+	text-align: center;
+}
+
+.section{
+	width: 40%;
+	margin: 10% 5% 10% 5%;
+	float: left;
+}
+
+label {
+	float: left;
+	width: 19%;
+	text-align: right;
+	margin-right: 1%;
+	margin-top: 1%;
+}
+
+label.obrigatorio:after {
+	content:"*";
+	display:inline-block;
+	color:#C00;
+	margin-left:2px;
+}
+
+.radio{
+	float: left;
+	width: 40%;
+	margin: 0;
+	text-align: left;
+}
+
+input{
+	float: left;
+	width: 78%;
+	padding: 1%;
+}
+
+input[type = "radio"]{
+
+	width: 10%;
+
+
+}
+
+.botao{
+	width: 8%; 
+	height: 8%; 
+	margin: -8% 15% 0% 13%;
+	background-color: #00FF7F;
+	border-radius: 10%;
+	font-size: 130%;
+	border: 0;
+
+
+
+}
+
+select{
+	padding: 1%;
+}
+
+.row{
+	margin: 1% 0;
+	float: left;
+	width: 100%;
+}
+
