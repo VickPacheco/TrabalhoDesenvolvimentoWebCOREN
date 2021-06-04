@@ -3,9 +3,10 @@
 if (isset($_POST["acao"])){	
 
 	if ($_POST["acao"]=="inserir"){
+		//manter o id_endereco igual ao id da tabela pessoa
+		$id_endereco = inserirEndereco();
+		inserirPessoa($id_endereco);
 		
-		inserirPessoa();
-		inserirEndereco();
 
 	}
 
@@ -16,7 +17,6 @@ if (isset($_POST["acao"])){
 	}
 
 }
-
 
 
 function abrirBanco(){
@@ -31,16 +31,19 @@ function inserirEndereco(){
 	$sql = "INSERT INTO endereco(cep, rua, numero, complemento, referencia, bairro, cidade, estado) VALUES ('{$_POST["cep"]}','{$_POST["rua"]}','{$_POST["numero"]}','{$_POST["complemento"]}','{$_POST["referencia"]}','{$_POST["bairro"]}','{$_POST["cidade"]}','{$_POST["estado"]}')";
 
 	$banco->query($sql);
+	$id_endereco = $banco->insert_id;
 	$banco->close();
+
+	return $id_endereco;
 }
 
 
-function inserirPessoa(){
+function inserirPessoa($id_endereco){
 	//$banco = new mysqli("localhost","root","cadastropessoa");
 
 	$banco = abrirBanco();
 
-	$sql = "INSERT INTO pessoa(tipopessoa, nome, sobrenome, sexo, cpf, telefone, celular, nascimento) VALUES ('{$_POST["opcao"]}','{$_POST["nome"]}','{$_POST["sobrenome"]}','{$_POST["sexo"]}','{$_POST["cpf"]}','{$_POST["telefone"]}','{$_POST["celular"]}','{$_POST["nascimento"]}')";
+	$sql = "INSERT INTO pessoa(tipopessoa, nome, sobrenome, sexo, cpf, telefone, celular, nascimento, id_endereco) VALUES ('{$_POST["opcao"]}','{$_POST["nome"]}','{$_POST["sobrenome"]}','{$_POST["sexo"]}','{$_POST["cpf"]}','{$_POST["telefone"]}','{$_POST["celular"]}','{$_POST["nascimento"]}', $id_endereco)";
 
 	$banco->query($sql);
 	$banco->close();
@@ -86,6 +89,10 @@ function alterarPessoa(){
 
 	voltarIndex();
 }
+
+/*
+	SELECT * FROM `pessoa` inner join endereco on pessoa.id_endereco = endereco.id
+*/
 
 /*
 function alterarEndereco(){
