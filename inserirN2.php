@@ -1,18 +1,7 @@
-<link rel="stylesheet" type="text/css" href="cssN2.css" media="screen" />
+<form name="cadastropessoa" action="conexaoN2.php" method="post">
+	
 
-<!DOCTYPE html>
-
-<html>
-	<head>
-		<h1>Formulário de Cadastro N2</h1>
-		<meta charset="utf-8">
-		<title>Formulário de Cadastro</title>
-	</head>
-	<body style="font-family: helvetica">
-		
-		<form name="cadastropessoa" action="listabancoN2.php" method="post">
-			<div class="section">
-
+	<div class="section">
 				<p>Dados Cadastrais</p>
 			
 				<div class="form-check">
@@ -112,13 +101,8 @@
 
 				<div>
 					<input type="hidden" name="acao" value="inserir"/>
-
-					<button class="botao" type="submit" name="botao" value="Cadastrar">Cadastrar</button>
-
+					<button class="botao" type="submit" name="botao" value="Cadastrar">Cadastrar<b> ></button>
 				</div>
-				<div>
-					<input onclick="window.location.href = 'listabancoN2.php'" class="botao2" name="botao" value=" Cadastros"><b>></input>
-				</div>
-			</form>
-	</body>
-</html>
+
+
+</form>

@@ -9,6 +9,24 @@ h1 {
 	float: left;
 }
 
+table {
+	font-family: helvetica;
+}
+
+p{
+	font-family: helvetica;
+}
+
+.botao-tabela{
+	width: 100%;
+	background-color:#E0FFFF;
+}
+
+table {
+	border-color: #000000;
+	border-style: solid;
+}
+
 label {
 	float: left;
 	width: 19%;
@@ -45,7 +63,7 @@ input[type = "radio"]{
 }
 
 .botao{
-	width: 8%; 
+	width: 7%; 
 	height: 8%; 
 	margin: -8% 15% 0% 13%;
 	background-color: #00FF7F;
@@ -55,7 +73,23 @@ input[type = "radio"]{
 	cursor: pointer;
 }
 
+.botao2{
+	width: 7%; 
+	height: 8%; 
+	margin: -8% 15% 0% 21%;
+	background-color: #9370DB;
+	border-radius: 10%;
+	font-size: 130%;
+	border: 0;
+	cursor: pointer;
+}
+
+
 .botao:hover{
+	background-color: #999;
+}
+
+.botao2:hover{
 	background-color: #999;
 }
 
