@@ -13,7 +13,7 @@ if (isset($_POST["acao"])){
 	if ($_POST["acao"]=="alterar"){
 
 		alterarPessoa();
-
+		alterarEndereco();
 	}
 
 }
@@ -45,11 +45,13 @@ function inserirPessoa($id_endereco){
 
 	$sql = "INSERT INTO pessoa(tipopessoa, nome, sobrenome, sexo, cpf, telefone, celular, nascimento, id_endereco) VALUES ('{$_POST["opcao"]}','{$_POST["nome"]}','{$_POST["sobrenome"]}','{$_POST["sexo"]}','{$_POST["cpf"]}','{$_POST["telefone"]}','{$_POST["celular"]}','{$_POST["nascimento"]}', $id_endereco)";
 
+	
 	$banco->query($sql);
 	$banco->close();
 }
 
 function mostrarCadastrados(){
+	$grupo = array();
 	$banco = abrirBanco();
 	$sql = "SELECT * FROM pessoa ORDER by nome";
 	$resultado = $banco -> query($sql);
@@ -65,6 +67,7 @@ function mostrarCadastrados(){
 
 
 function mostrarEnderecos(){
+	$grupo2 = array();
 	$banco = abrirBanco();
 	$sql = "SELECT * FROM endereco ORDER by cep";
 	$resultado = $banco -> query($sql);
@@ -72,40 +75,64 @@ function mostrarEnderecos(){
 	//função para mostrar varias linhas do resultado 
 	
 	while ($row = mysqli_fetch_array($resultado)) {
-		$grupo2 [] = $row;
+		$grupo2[] = $row;
 	}
 
 	return $grupo2;
 }
 
 function alterarPessoa(){
-	$banco = new mysqli("localhost","root", "","cadastropessoa");
+	//$banco = new mysqli("localhost","root", "","cadastropessoa");
 
-	$sql = "UPDATE pessoa SET opcao= '{$_POST["opcao"]}', nome='{$_POST["nome"]}', sobrenome='{$_POST["sobrenome"]}',sexo = '{$_POST["sexo"]}',cpf = '{$_POST["cpf"]}', telefone='{$_POST["telefone"]}', celular='{$_POST["celular"]}', nascimento= '{$_POST["nascimento"]}' WHERE id='{$_POST["id"]}'";
+	$banco = abrirBanco();
+
+	$sql = "UPDATE pessoa SET tipopessoa= '{$_POST["opcao"]}', nome='{$_POST["nome"]}', sobrenome='{$_POST["sobrenome"]}',sexo = '{$_POST["sexo"]}',cpf = '{$_POST["cpf"]}', telefone='{$_POST["telefone"]}', celular='{$_POST["celular"]}', nascimento= '{$_POST["nascimento"]}' WHERE id='{$_POST["id"]}'";
 
 	$banco->query($sql);
 
 	$banco->close();
 
-	voltarIndex();
 }
 
-/*
-	SELECT * FROM `pessoa` inner join endereco on pessoa.id_endereco = endereco.id
-*/
-
-/*
 function alterarEndereco(){
-	$banco = new mysqli("localhost","root", "","cadastropessoa");
+	//$banco = new mysqli("localhost","root", "","cadastropessoa");
 
-	$sql = "UPDATE pessoa SET cep = '{$_POST["cep"]}', rua= '{$_POST["rua"]}', numero='{$_POST["numero"]}', complemento = '{$_POST["complemento"]}', referencia ='{$_POST["referencia"]}', bairro ='{$_POST["bairro"]}', cidade = '{$_POST["cidade"]}', estado = '{$_POST["estado"]}' WHERE id='{$_POST["id"]}'";
+	$banco = abrirBanco();
+
+	$sql = "UPDATE endereco SET cep= '{$_POST["cep"]}', rua='{$_POST["rua"]}', numero='{$_POST["numero"]}', complemento = '{$_POST["complemento"]}',referencia = '{$_POST["referencia"]}', bairro='{$_POST["bairro"]}', cidade='{$_POST["cidade"]}', estado= '{$_POST["estado"]}' WHERE id='{$_POST["id_endereco"]}'";
+
 
 	$banco->query($sql);
 
 	$banco->close();
 
 	voltarIndex();
+
 }
-*/
+
+function buscarCadastrado($id){
+	$banco = new mysqli("localhost", "root", "", "cadastropessoa");
+	$sql = "SELECT * FROM pessoa WHERE id = $id"; 
+	$resultado = $banco -> query($sql);
+	
+	// função para mostrar apenas uma linha no resultado
+	$pessoa = mysqli_fetch_assoc($resultado);
+	return $pessoa;
+}
+
+
+function buscarEnderecoCadastrado($id){
+	$banco = new mysqli("localhost", "root", "", "cadastropessoa");
+	$sql = "SELECT * FROM endereco WHERE id= $id";
+	$resultado = $banco -> query($sql);
+	
+	// função para mostrar apenas uma linha no resultado
+	$pessoa = mysqli_fetch_assoc($resultado);
+	return $pessoa;
+}
+
+function voltarIndex(){
+	header("Location:index.php");
+}
 
 ?>

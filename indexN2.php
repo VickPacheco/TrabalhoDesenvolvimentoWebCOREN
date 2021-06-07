@@ -10,7 +10,7 @@
 	</head>
 	<body style="font-family: helvetica">
 		
-		<form name="cadastropessoa" action="listabancoN2.php" method="post">
+		<form name="cadastropessoa" action="conexaoN2.php" method="post">
 			<div class="section">
 
 				<p>Dados Cadastrais</p>
@@ -117,7 +117,7 @@
 
 				</div>
 				<div>
-					<input onclick="window.location.href = 'listabancoN2.php'" class="botao2" name="botao" value=" Cadastros"><b>></input>
+					<input onclick="window.location.href = 'listabancoN2.php'" class="botao2" name="botao" value=" Cadastros"><b></input>
 				</div>
 			</form>
 	</body>
