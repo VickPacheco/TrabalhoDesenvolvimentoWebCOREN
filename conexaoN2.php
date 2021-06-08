@@ -4,20 +4,28 @@ if (isset($_POST["acao"])){
 
 	if ($_POST["acao"]=="inserir"){
 		//manter o id_endereco igual ao id da tabela pessoa
+		
 		$id_endereco = inserirEndereco();
 		inserirPessoa($id_endereco);
+		voltarListaBanco();
 		
-
 	}
 
 	if ($_POST["acao"]=="alterar"){
 
 		alterarPessoa();
 		alterarEndereco();
+		voltarListaBanco();
+	}
+
+	if($_POST["acao"]=="excluir"){
+
+		deletarPessoa();
+		voltarListaBanco();
+
 	}
 
 }
-
 
 function abrirBanco(){
 	$conexao = new mysqli ("localhost", "root", "", "cadastropessoa");
@@ -39,15 +47,20 @@ function inserirEndereco(){
 
 
 function inserirPessoa($id_endereco){
-	//$banco = new mysqli("localhost","root","cadastropessoa");
+	//Remove pontos e traços do CPF
+	$cpf = preg_replace('/[^0-9]/', '', $_POST["cpf"]);
+	$telefone = preg_replace('/[^0-9]/', '', $_POST["telefone"]);
+	$celular = preg_replace('/[^0-9]/', '', $_POST["celular"]);
 
 	$banco = abrirBanco();
 
-	$sql = "INSERT INTO pessoa(tipopessoa, nome, sobrenome, sexo, cpf, telefone, celular, nascimento, id_endereco) VALUES ('{$_POST["opcao"]}','{$_POST["nome"]}','{$_POST["sobrenome"]}','{$_POST["sexo"]}','{$_POST["cpf"]}','{$_POST["telefone"]}','{$_POST["celular"]}','{$_POST["nascimento"]}', $id_endereco)";
+	$sql = "INSERT INTO pessoa(tipopessoa, nome, sobrenome, sexo, cpf, telefone, celular, nascimento, id_endereco) VALUES ('{$_POST["opcao"]}','{$_POST["nome"]}','{$_POST["sobrenome"]}','{$_POST["sexo"]}','{$cpf}','{$telefone}','{$celular}','{$_POST["nascimento"]}', $id_endereco)";
 
 	
 	$banco->query($sql);
 	$banco->close();
+
+
 }
 
 function mostrarCadastrados(){
@@ -82,7 +95,6 @@ function mostrarEnderecos(){
 }
 
 function alterarPessoa(){
-	//$banco = new mysqli("localhost","root", "","cadastropessoa");
 
 	$banco = abrirBanco();
 
@@ -95,18 +107,14 @@ function alterarPessoa(){
 }
 
 function alterarEndereco(){
-	//$banco = new mysqli("localhost","root", "","cadastropessoa");
 
 	$banco = abrirBanco();
 
 	$sql = "UPDATE endereco SET cep= '{$_POST["cep"]}', rua='{$_POST["rua"]}', numero='{$_POST["numero"]}', complemento = '{$_POST["complemento"]}',referencia = '{$_POST["referencia"]}', bairro='{$_POST["bairro"]}', cidade='{$_POST["cidade"]}', estado= '{$_POST["estado"]}' WHERE id='{$_POST["id_endereco"]}'";
 
-
 	$banco->query($sql);
 
 	$banco->close();
-
-	voltarIndex();
 
 }
 
@@ -131,8 +139,24 @@ function buscarEnderecoCadastrado($id){
 	return $pessoa;
 }
 
+
+function deletarPessoa(){
+
+	$banco = new mysqli("localhost","root", "","cadastropessoa");
+
+	$sql = "DELETE a,b FROM pessoa AS a INNER JOIN endereco AS b ON a.id_endereco = b.id WHERE a.id ='{$_POST["id"]}'";
+	$banco->query($sql);
+
+	$banco->close();
+
+}
+
 function voltarIndex(){
-	header("Location:index.php");
+	header("Location:indexN2.php");
+}
+
+function voltarListaBanco(){
+	header("Location:listabancoN2.php");
 }
 
 ?>

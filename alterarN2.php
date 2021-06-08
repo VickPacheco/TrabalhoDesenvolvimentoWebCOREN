@@ -117,17 +117,17 @@
 				</div>
 			</div>
 
-				<div>
+				
 					<input type="hidden" name="acao" value="alterar"/>
 					<input type="hidden" name="id" value="<?=$pessoa['id']?>"/>
 					<input type="hidden" name="id_endereco" value="<?=$endereco['id']?>"/>
 
-					<button class="botao" type="submit" name="botao" value="Alterar">Alterar Cadastro</button>
+					<input class="botao" type="submit" name="botao" value="Alterar" />
 
-				</div>
-				<div>
-					<button onclick="window.location.href = 'listabancoN2.php'" type="button" class="botao2" name="botao" value="Cadastros">Lista de Cadastros</button>
-				</div>
+				
+				
+					<input onclick="window.location.href = 'listabancoN2.php'" style="text-align:center" class="botao2" name="botao" value="Listar" />
+				
 			</form>
 	</body>
 </html>
