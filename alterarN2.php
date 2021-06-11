@@ -9,6 +9,7 @@
 
 <html>
 	<head>
+		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
 		<link rel="stylesheet" type="text/css" href="cssN2.css" media="screen" />
 
 		<h1>Formulário de Alteração de Cadastro N2</h1>
@@ -18,7 +19,7 @@
 	<body style="font-family: helvetica">
 		
 		<form name="cadastropessoa" action="conexaoN2.php" method="post">
-			<div class="section">
+			<div class="section-1">
 
 				<p>Dados Cadastrais</p>
 			
@@ -73,7 +74,7 @@
 		
 			</div>
 			
-			<div class="section">
+			<div class="section-2">
 				<p>Endereço de Entrega</p>
 				
 				<div class="row">

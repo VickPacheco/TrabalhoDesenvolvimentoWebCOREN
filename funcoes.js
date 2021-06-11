@@ -1,4 +1,3 @@
-
 function validarCadastro(){
 			
 	if(document.getElementById("nome").value == ""){
@@ -23,13 +22,6 @@ function validarCadastro(){
 		alert("Campo nascimento deve ser preenchido");
 		return false;
 	}else return true;
-}
-
-function confirmaExclusao(){
-
-	return confirm("Deseja mesmo excluir este usuário da tabela?");
-
-
 }
 
 jQuery(document).ready(function( $ ){

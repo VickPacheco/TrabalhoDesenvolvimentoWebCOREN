@@ -3,22 +3,25 @@
 	$grupo = mostrarCadastrados();
 	$grupo2 = mostrarEnderecos();
 ?>
-
-<link rel="stylesheet" type="text/css" href="cssN2.css" media="screen" />	
+<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+<script type="text/javascript" src="query.maskedinput.js"></script>
+<link rel="stylesheet" type="text/css" href="cssN2.css" media="screen"  />	
+<script type="text/javascript" src="funcoesN2.js"></script>
 
 <div class="tabela-centro">
 		<table border="1">
 				<thead>
 					<h2>Tabela Pessoa</h2>
 					<tr>
-						<th>Tipo de Pessoa</th>
+						<th class="ocultar-celular">Tipo de Pessoa</th>
 						<th>Nome</th>
-						<th>Sobrenome</th>
-						<th>Sexo</th>				
+						<th class="ocultar-celular">Sobrenome</th>
+						<th class="ocultar-celular">Sexo</th>				
 						<th>CPF</th>
-						<th>Telefone</th>
-						<th>Celular</th>
-						<th>Nascimento</th>
+						<th class="ocultar-celular">Telefone</th>
+						<th class="ocultar-celular">Celular</th>
+						<th class="ocultar-celular">Nascimento</th>
 						<th>Editar</th>
 						<th>Excluir</th>
 					</tr>
@@ -27,14 +30,14 @@
 
 				<?php foreach ($grupo as $pessoa) { ?>
 					<tr>
-						<td><?=$pessoa["tipopessoa"]?></td>
+						<td class="ocultar-celular"><?=$pessoa["tipopessoa"]?></td>
 						<td><?=$pessoa["nome"]?></td>
-						<td><?=$pessoa["sobrenome"]?></td>
-						<td><?=$pessoa["sexo"]?></td>
+						<td class="ocultar-celular"><?=$pessoa["sobrenome"]?></td>
+						<td class="ocultar-celular"><?=$pessoa["sexo"]?></td>
 						<td><?=$pessoa["cpf"]?></td>
-						<td><?=$pessoa["telefone"]?></td>
-						<td><?=$pessoa["celular"]?></td>
-						<td><?=$pessoa["nascimento"]?></td>
+						<td class="ocultar-celular"><?=$pessoa["telefone"]?></td>
+						<td class="ocultar-celular"><?=$pessoa["celular"]?></td>
+						<td class="ocultar-celular"><?=$pessoa["nascimento"]?></td>
 
 
 						<td>
@@ -44,10 +47,10 @@
 							</form>
 						</td>
 						<td>
-							<form name="excluir" action="conexaoN2.php" method="POST">
+							<form onsubmit ="return confirmaExclusao()" name="excluir" action="conexaoN2.php" method="POST">
 								<input type="hidden" name="id" value="<?=$pessoa["id"]?>"/>
 								<input type="hidden" name="acao" value="excluir"/>
-								<input class="botao-tabela" type="submit" name="excluir" value="Excluir"/>
+								<input class="botao-tabela" type="submit" name="excluir" value="Excluir" />
 							</form>
 						</td>
 					</tr>
@@ -56,9 +59,9 @@
 				</tbody>
 		</table>
 
-		<table border="1">
+		<table border="1" class="ocultar-celular">
 				<thead>
-					<h2>Tabela Endereço</h2>
+					<h2 class="ocultar-celular">Tabela Endereço</h2>
 					<tr>
 						<th>CEP</th>
 						<th>Rua</th>
