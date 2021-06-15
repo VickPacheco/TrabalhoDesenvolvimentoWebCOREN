@@ -1,0 +1,419 @@
+body{
+	font-family: helvetica;
+	font-size: 15px;
+}
+
+h1 {
+	width: 100%;
+	text-align: center;
+}
+
+h2{
+	font-size: 200%;
+	color: #000;
+}
+
+h3{
+	text-align: center;
+	font-size: 120%;
+
+}
+
+.menu{
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 5%;
+	position: relative;
+	width: 20%;
+	display: table;
+	background-color: #CAE1FF;
+	padding: 2%;
+	border-radius: 2%;
+	box-shadow: 2px 2px 17px rgba(0,0,0,0.2);
+	box-sizing: border-box;
+}
+
+.menu2{
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 5%;
+	position: relative;
+	width: 100%;
+	display: table;
+	background-color: #FFFFFF;
+	padding: 15%;
+	border-radius: 2%;
+	box-sizing: border-box;
+}
+
+.section-1{
+	width: 40%;
+	margin: 5% 2% 0 8%;
+	float: left;
+}
+
+.section-2{
+	width: 40%;
+	margin: 5% 8% 0 2%;
+	float: left;
+}
+
+.botao-tabela{
+	width: 100%;
+}
+
+.tabela-centro{
+	margin: 0 auto;
+	position: relative;
+	width: 50%;
+	display: table;
+	background-color: #F5F5F5;
+	padding: 2%;
+	box-sizing: border-box;
+}
+
+.menu{
+	font-family: helvetica;
+}
+
+form{
+	width: 100%;
+	display: table;
+}
+table {
+	border-collapse: collapse;
+	border-color: #000000;
+	border-style: solid;
+	background-color: #FFF;
+	width: 100%;
+	font-family: helvetica;
+}
+
+th{
+	background-color: #CAE1FF;
+}
+
+label {
+	float: left;
+	width: 19%;
+	text-align: right;
+	margin-right: 1%;
+	margin-top: 1%;
+	box-sizing: border-box;
+}
+
+label.obrigatorio:after {
+	content:"*";
+	display:inline-block;
+	color:#C00;
+	margin-left:2px;
+}
+
+.radio{
+	float: left;
+	width: 40%;
+	margin: 0;
+	text-align: left;
+	box-sizing: border-box;
+}
+
+input{
+	float: left;
+	width: 77%;
+	padding: 1%;
+	font-size: 1em;
+	font-family: helvetica;
+	box-sizing: border-box;
+}
+
+input[type = "radio"]{
+	width: 10%;
+}
+
+select{
+	font-family: helvetica;
+	font-size: 1em;
+}
+
+.botao{
+	float: left;
+	width: 7%; 
+	padding: 1%; 
+	margin-right: 1%;
+	margin-left: 16%;
+	background-color: #00FF7F;
+	border-radius: 10%;
+	font-size: 130%;
+	border: 0;
+	cursor: pointer;
+	box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+	box-sizing: border-box;
+}
+
+.botao2{
+	float: left;
+	width: 7%; 
+	padding: 1%; 
+	margin: 0;
+	margin-left: 1%;
+	background-color: #CAE1FF;
+	border-radius: 10%;
+	font-size: 130%;
+	border: 0;
+	cursor: pointer;
+	box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+	box-sizing: border-box;
+}
+
+.botao3{	
+	width: 11%; 
+	height: 8%; 
+	background-color: #CAE1FF;
+	border-radius: 10%;
+	font-size: 130%;
+	border: 0;
+	cursor: pointer;
+	box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+	margin: 5% 5% 1% 0%;
+}
+
+#botao-menu1{
+	float: none;
+    padding: 2%;
+    height: 37px;
+    width: 44%;
+    border: 0;
+    border-radius: 7%;
+    background-color: #CAE1FF;
+    font-weight: bold;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+#botao-menu2{
+	float: none;
+    padding: 2%;
+    height: 37px;
+    width: 44%;
+    border: 0;
+    border-radius: 7%;
+    background-color: #CAE1FF;
+    font-weight: bold;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+.botao:hover{
+	background-color: #00CD00;
+}
+
+.botao2:hover{
+	background-color: #7EC0EE;
+}
+
+.botao3:hover{
+	background-color: #7EC0EE;
+}
+
+#botao-menu1:hover{
+	background-color: #696969;
+}
+
+#botao-menu2:hover{
+	background-color: #696969;
+}
+
+select{
+	padding: 1%;
+}
+
+.row{
+	margin: 1% 0;
+	float: left;
+	width: 100%;
+}
+
+@media screen and (max-width: 899px) {
+	body{
+		font-size: 17px;
+	}
+
+	h1 {
+		
+	}
+
+	h2{
+
+	}
+
+	h3{
+
+	}
+
+	.menu{
+		padding: 4%;
+		width: 80%;
+	}
+
+	.menu2{
+		text-align: center;
+		margin: 0 auto;
+		margin-top: 5%;
+		position: relative;
+		width: 100%;
+		display: table;
+		background-color: #FFFFFF;
+		padding: 15%;
+		border-radius: 3%;
+		box-sizing: border-box;
+	}
+	.section-1{
+		width: 100%;
+		margin: 0;
+	}
+
+	.section-2{
+		width: 100%;
+		margin: 0;
+	}
+
+	.botao-tabela{
+		width: 100%;
+	}
+
+	.tabela-centro{
+		width: 100%;
+	}
+
+	.ocultar-celular{
+		display: none;
+	}
+
+	.menu{
+	
+	}
+
+	form{
+		
+	}
+
+	table {
+	
+	}
+
+	th{
+		
+	}
+
+	label {
+		width: 100%;
+		margin: 0;
+		text-align: left;
+	}
+
+	label.obrigatorio:after {
+		content:"*";
+		display:inline-block;
+		color:#C00;
+		margin-left:2px;
+	}
+
+	.radio{
+		float: left;
+		width: 40%;
+		margin: 0;
+		text-align: left;
+		box-sizing: border-box;
+	}
+
+	input{
+		width: 100%;
+	}
+
+	input[type = "radio"]{
+		width: 10%;
+	}
+
+	select{
+		font-family: helvetica;
+		font-size: 1em;
+	}
+
+	.botao{
+		float: left;
+		margin: 0;
+		margin-right: 5%;
+		width: 45%; 
+		padding: 3%; 
+	}
+
+	.botao2{
+		float: left;
+		margin: 0;
+		margin-left: 5%;
+		width: 45%; 
+		padding: 3%; 
+	}
+
+	.botao3{	
+		width: 25%; 
+	}
+
+	#botao-menu1{
+		float: none;
+	    padding: 2%;
+	    height: 37px;
+	    width: 44%;
+	    border: 0;
+	    border-radius: 7%;
+	    color: #FFFFFF;
+	    background-color: #473C8B;
+	    font-weight: bold;
+	    box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+	    cursor: pointer;
+	}
+
+	#botao-menu2{
+		float: none;
+	    padding: 2%;
+	    height: 37px;
+	    width: 44%;
+	    border: 0;
+	    border-radius: 7%;
+	    color: #FFFFFF;
+	    background-color: #473C8B;
+	    font-weight: bold;
+	    box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+	    cursor: pointer;
+	}
+
+	.botao:hover{
+		background-color: #00CD00;
+	}
+
+	.botao2:hover{
+		background-color: #7EC0EE;
+	}
+
+	.botao3:hover{
+		background-color: #7EC0EE;
+	}
+
+	#botao-menu1:hover{
+		background-color: #696969;
+	}
+
+	#botao-menu2:hover{
+		background-color: #696969;
+	}
+
+	select{
+		padding: 1%;
+	}
+
+	.row{
+		margin: 1% 0;
+		float: left;
+		width: 100%;
+	}
+}

@@ -95,6 +95,9 @@
 		</table>
 
 		<div>
-				<input onclick="window.location.href = 'indexN2.php'" type="button" class="botao3" name="botao" value="Voltar" />
+				<input onclick="window.location.href = 'indexN2.php'" type="button" class="botao3" name="botao" value="Cadastro" />
+		</div>
+		<div>
+				<input onclick="window.location.href = 'indexprincipal.php'" type="button" class="botao3" name="botao" value="Menu" />
 		</div>
 </div>
