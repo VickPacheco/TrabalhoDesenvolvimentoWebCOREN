@@ -9,7 +9,7 @@
 		<script type="text/javascript" src="funcoesN2.js"></script>
 		<h1>Formulário de Cadastro N2</h1>
 		<meta charset="utf-8">
-		<title>Formulário de Cadastro</title>
+		<title>Formulário de Cadastro 2</title>
 	</head>
 	<body style="font-family: helvetica">
 		
